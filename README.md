@@ -1,4 +1,4 @@
-# LocalCart: Production-Ready Local E-Commerce Platform
+# LocoBuy: Production-Ready Local E-Commerce Platform
 
 A production-grade, highly responsive, mobile-first local e-commerce application. It includes a FastAPI python backend, a React.js (Vite) frontend, Zustand state management, and is built to integrate with Supabase PostgreSQL and Auth.
 
@@ -115,5 +115,5 @@ The frontend has a **Mock Auth mode** that auto-toggles if no Supabase environme
 ## Mock Mode Credentials
 
 If you run without setting up live Supabase keys, you can sign in immediately using:
-* **Customer role**: `customer@localcart.com` / *(any password)*
-* **Admin role**: `admin@localcart.com` / *(any password)*
+* **Customer role**: `customer@locobuy.com` / *(any password)*
+* **Admin role**: `admin@locobuy.com` / *(any password)*

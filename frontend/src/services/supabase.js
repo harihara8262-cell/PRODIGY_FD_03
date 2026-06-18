@@ -12,10 +12,10 @@ export const isMockAuth =
 
 if (isMockAuth) {
   console.warn(
-    "LocalCart: Supabase credentials are not configured. Running in Mock Auth mode.\n" +
+    "LocoBuy: Supabase credentials are not configured. Running in Mock Auth mode.\n" +
     "Sign in using:\n" +
-    " - Admin: admin@localcart.com / password\n" +
-    " - Customer: customer@localcart.com / password"
+    " - Admin: admin@locobuy.com / password\n" +
+    " - Customer: customer@locobuy.com / password"
   );
 }
 

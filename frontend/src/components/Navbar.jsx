@@ -38,10 +38,10 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <span className="text-2xl font-black bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent tracking-tight">
-                LocalCart
+                LocoBuy
               </span>
               <span className="text-[9px] uppercase tracking-widest font-extrabold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 px-1.5 py-0.5 rounded-md">
-                Local
+                Loco
               </span>
             </Link>
           </div>

@@ -65,7 +65,7 @@ export default function SignUp() {
         if (data?.user) {
           if (data.session) {
             setUser(data.user, data.session.access_token);
-            toast.success('Registration successful! Welcome to LocalCart!');
+            toast.success('Registration successful! Welcome to LocoBuy!');
             navigate('/');
           } else {
             toast.success('Account created! Please check your email inbox to confirm registration.');
@@ -89,7 +89,7 @@ export default function SignUp() {
             Create Account
           </h2>
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-            Join LocalCart to get fresh local items delivered fast
+            Join LocoBuy to get fresh local items delivered fast
           </p>
         </div>
 

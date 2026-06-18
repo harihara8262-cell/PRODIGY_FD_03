@@ -90,7 +90,7 @@ export default function Layout({ children }) {
             {/* About */}
             <div className="space-y-4">
               <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
-                LocalCart
+                LocoBuy
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                 Your neighborhood grocery and essential goods delivery. Connecting you directly with local warehouses for ultra-fast, fresh deliveries.
@@ -142,13 +142,13 @@ export default function Layout({ children }) {
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                 <Mail size={16} className="text-emerald-600" />
-                <span>support@localcart.com</span>
+                <span>support@locobuy.com</span>
               </div>
             </div>
           </div>
 
           <div className="pt-8 border-t border-gray-200 dark:border-gray-900 text-center text-xs text-gray-400 dark:text-gray-500">
-            &copy; {new Date().getFullYear()} LocalCart Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} LocoBuy Inc. All rights reserved.
           </div>
         </div>
       </footer>
