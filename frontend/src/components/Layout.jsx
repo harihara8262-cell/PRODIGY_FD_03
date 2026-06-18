@@ -89,9 +89,24 @@ export default function Layout({ children }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* About */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
-                LocoBuy
-              </h3>
+              <div className="flex items-center space-x-2">
+                <svg
+                  className="w-7 h-7 text-emerald-600 dark:text-emerald-450"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <path d="M9 10V8a3 3 0 0 1 6 0v2" />
+                  <rect x="8" y="10" width="8" height="6" rx="1.5" fill="currentColor" className="opacity-25" />
+                </svg>
+                <h3 className="text-xl font-bold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
+                  LocoBuy
+                </h3>
+              </div>
               <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                 Your neighborhood grocery and essential goods delivery. Connecting you directly with local warehouses for ultra-fast, fresh deliveries.
               </p>

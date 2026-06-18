@@ -36,7 +36,23 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2 group">
+              <svg
+                className="w-8 h-8 text-emerald-600 dark:text-emerald-450 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {/* Map pin outline */}
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                {/* Inside: shopping bag handle */}
+                <path d="M9 10V8a3 3 0 0 1 6 0v2" />
+                {/* Inside: shopping bag body */}
+                <rect x="8" y="10" width="8" height="6" rx="1.5" fill="currentColor" className="opacity-25" />
+              </svg>
               <span className="text-2xl font-black bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent tracking-tight">
                 LocoBuy
               </span>
