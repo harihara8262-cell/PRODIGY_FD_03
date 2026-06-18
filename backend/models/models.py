@@ -26,6 +26,7 @@ class Product(Base):
     name = Column(String, nullable=False)
     description = Column(String, nullable=True)
     price = Column(Numeric(12, 2), nullable=False)
+    original_price = Column(Numeric(12, 2), nullable=True) # Pre-discount price
     category = Column(String, index=True, nullable=False)
     stock = Column(Integer, default=0, nullable=False)
     image_url = Column(String, nullable=True)

@@ -58,7 +58,7 @@ export default function Layout({ children }) {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-950 dark:text-gray-200">Free & Fast Delivery</h4>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Free delivery for all orders above $50</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Free delivery for all orders above ₹500</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-4">

@@ -38,13 +38,12 @@ export default function ProductCard({ product }) {
         )}
         {/* Action Overlay */}
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-3 z-10">
-          <Link
-            to={`/products/${product.id}`}
-            className="p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-full hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 transition-colors shadow-md transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+          <span
+            className="p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-full hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 transition-colors shadow-md transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 cursor-pointer"
             title="View Details"
           >
             <Eye size={18} />
-          </Link>
+          </span>
         </div>
       </Link>
 
@@ -76,9 +75,23 @@ export default function ProductCard({ product }) {
 
         {/* Price & Action */}
         <div className="flex items-center justify-between pt-3 mt-auto border-t border-gray-100 dark:border-gray-700">
-          <span className="text-lg font-bold text-gray-900 dark:text-gray-50">
-            ${price}
-          </span>
+          <div className="flex flex-col">
+            <div className="flex items-center space-x-1.5">
+              <span className="text-base font-bold text-gray-900 dark:text-gray-50">
+                ₹{price}
+              </span>
+              {product.original_price && parseFloat(product.original_price) > parseFloat(product.price) && (
+                <span className="text-xs text-gray-400 line-through">
+                  ₹{parseFloat(product.original_price).toFixed(0)}
+                </span>
+              )}
+            </div>
+            {product.original_price && parseFloat(product.original_price) > parseFloat(product.price) && (
+              <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-450 mt-0.5">
+                {Math.round(((parseFloat(product.original_price) - parseFloat(product.price)) / parseFloat(product.original_price)) * 100)}% OFF
+              </span>
+            )}
+          </div>
           <button
             onClick={handleAddToCart}
             disabled={stock === 0}

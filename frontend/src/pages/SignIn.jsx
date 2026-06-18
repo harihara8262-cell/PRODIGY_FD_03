@@ -78,7 +78,15 @@ export default function SignIn() {
               role: isAdminPhone ? 'admin' : 'customer'
             }
           };
-          const mockToken = isAdminPhone ? 'mock-jwt-admin-token-value' : 'mock-jwt-phone-token-value';
+          // Generate a valid mock JWT token structure
+          const header = btoa(JSON.stringify({ alg: "HS256", typ: "JWT" }));
+          const payload = btoa(JSON.stringify({
+            sub: mockUser.id,
+            email: mockUser.email,
+            phone: mockUser.phone,
+            user_metadata: mockUser.user_metadata
+          }));
+          const mockToken = `${header}.${payload}.mock-signature`;
           
           setUser(mockUser, mockToken);
           toast.success(`Logged in as ${isAdminPhone ? 'Admin' : 'Customer'}`);

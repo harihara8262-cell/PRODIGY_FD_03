@@ -82,12 +82,12 @@ export default function Cart() {
                   {item.name}
                 </Link>
                 <span className="text-xs text-gray-400 dark:text-gray-500 font-medium">
-                  Price: ${item.price.toFixed(2)}
+                  Price: ₹{item.price.toFixed(2)}
                 </span>
                 
                 {/* Total Item Price (Mobile-friendly layout position) */}
                 <span className="text-sm font-extrabold text-gray-900 dark:text-gray-50 block mt-1 sm:hidden">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  ₹{(item.price * item.quantity).toFixed(2)}
                 </span>
               </div>
 
@@ -126,7 +126,7 @@ export default function Cart() {
               {/* Total Item Price (Desktop layout position) */}
               <div className="hidden sm:block text-right min-w-[80px]">
                 <span className="text-base font-extrabold text-gray-900 dark:text-gray-50">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  ₹{(item.price * item.quantity).toFixed(2)}
                 </span>
               </div>
             </div>
@@ -142,23 +142,23 @@ export default function Cart() {
           <div className="space-y-3.5 text-sm">
             <div className="flex justify-between text-gray-600 dark:text-gray-400">
               <span>Subtotal</span>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">${getCartSubtotal().toFixed(2)}</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">₹{getCartSubtotal().toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-gray-600 dark:text-gray-400">
               <span>Taxes (5%)</span>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">${getCartTax().toFixed(2)}</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">₹{getCartTax().toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-gray-600 dark:text-gray-400">
               <span>Delivery Charge</span>
               {getCartDeliveryCharge() === 0 ? (
                 <span className="text-green-500 font-semibold">Free Delivery</span>
               ) : (
-                <span className="font-semibold text-gray-900 dark:text-gray-100">${getCartDeliveryCharge().toFixed(2)}</span>
+                <span className="font-semibold text-gray-900 dark:text-gray-100">₹{getCartDeliveryCharge().toFixed(2)}</span>
               )}
             </div>
             {getCartDeliveryCharge() > 0 && (
               <p className="text-[10px] text-amber-600 bg-amber-50 dark:bg-amber-950/20 px-2 py-1 rounded-md">
-                Add <span className="font-bold">${(50 - getCartSubtotal()).toFixed(2)}</span> more to qualify for Free Shipping!
+                Add <span className="font-bold">{(500 - getCartSubtotal()).toFixed(2)}</span> more to qualify for Free Shipping!
               </p>
             )}
           </div>
@@ -166,7 +166,7 @@ export default function Cart() {
           <div className="border-t border-gray-200 dark:border-gray-700 pt-4 flex justify-between items-end">
             <span className="text-base font-bold text-gray-800 dark:text-gray-200">Grand Total</span>
             <span className="text-2xl font-black text-gray-900 dark:text-gray-50">
-              ${getCartGrandTotal().toFixed(2)}
+              ₹{getCartGrandTotal().toFixed(2)}
             </span>
           </div>
 

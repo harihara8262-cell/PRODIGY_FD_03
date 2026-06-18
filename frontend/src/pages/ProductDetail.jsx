@@ -114,9 +114,21 @@ export default function ProductDetail() {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
               {product.name}
             </h1>
-            <p className="text-2xl font-black text-gray-900 dark:text-gray-50 mt-2">
-              ${price}
-            </p>
+            <div className="flex items-end space-x-2.5 mt-2">
+              <span className="text-2xl font-black text-gray-900 dark:text-gray-50">
+                ₹{price}
+              </span>
+              {product.original_price && parseFloat(product.original_price) > parseFloat(product.price) && (
+                <>
+                  <span className="text-sm text-gray-400 line-through pb-1">
+                    ₹{parseFloat(product.original_price).toFixed(2)}
+                  </span>
+                  <span className="text-xs font-bold text-emerald-600 dark:text-emerald-450 bg-emerald-50 dark:bg-emerald-950/20 px-2 py-0.5 rounded-md mb-1">
+                    {Math.round(((parseFloat(product.original_price) - parseFloat(product.price)) / parseFloat(product.original_price)) * 100)}% OFF
+                  </span>
+                </>
+              )}
+            </div>
           </div>
 
           <div className="border-t border-b border-gray-200 dark:border-gray-800 py-4">

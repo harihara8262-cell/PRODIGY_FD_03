@@ -31,6 +31,7 @@ class ProductBase(BaseModel):
     name: str
     description: Optional[str] = None
     price: Decimal
+    original_price: Optional[Decimal] = None
     category: str
     stock: int = 0
     image_url: Optional[str] = None
@@ -43,6 +44,7 @@ class ProductUpdate(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
     price: Optional[Decimal] = None
+    original_price: Optional[Decimal] = None
     category: Optional[str] = None
     stock: Optional[int] = None
     image_url: Optional[str] = None

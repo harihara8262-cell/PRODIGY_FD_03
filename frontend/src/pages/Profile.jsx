@@ -263,7 +263,7 @@ export default function Profile() {
                           Order #{order.id.slice(0, 8)}
                         </p>
                         <span className="text-xs text-gray-400 dark:text-gray-500 block">
-                          Date: {new Date(order.created_at).toLocaleDateString()} &bull; Total: ${parseFloat(order.total_amount).toFixed(2)}
+                          Date: {new Date(order.created_at).toLocaleDateString()} &bull; Total: ₹{parseFloat(order.total_amount).toFixed(2)}
                         </span>
                         <div className="pt-1">
                           <span className={`inline-block text-[9px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full ${

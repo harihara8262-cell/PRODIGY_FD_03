@@ -15,6 +15,13 @@ api.interceptors.request.use(
   (config) => {
     const token = useStore.getState().token;
     if (token) {
+      // Auto-clear legacy plain mock tokens to prevent persistent 401 states
+      if (token.startsWith('mock-') && !token.includes('.')) {
+        console.warn("Detected legacy mock token format. Resetting auth state.");
+        useStore.getState().logout();
+        window.location.href = '/signin';
+        return config;
+      }
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;

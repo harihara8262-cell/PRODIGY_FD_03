@@ -224,7 +224,7 @@ export default function AdminDashboard() {
                   </div>
                   <div>
                     <span className="text-xs text-gray-400 block font-medium">Total Volume</span>
-                    <span className="text-lg font-black text-gray-900 dark:text-gray-50">${stats.cards.totalSales.toFixed(2)}</span>
+                    <span className="text-lg font-black text-gray-900 dark:text-gray-50">₹{stats.cards.totalSales.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
                   </div>
                   <div>
                     <span className="text-xs text-gray-400 block font-medium">Net Revenue</span>
-                    <span className="text-lg font-black text-gray-900 dark:text-gray-50">${stats.cards.revenue.toFixed(2)}</span>
+                    <span className="text-lg font-black text-gray-900 dark:text-gray-50">₹{stats.cards.revenue.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -277,7 +277,7 @@ export default function AdminDashboard() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* SVG Sales Trend Chart */}
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm space-y-4">
-                  <h3 className="font-bold text-gray-900 dark:text-gray-100 text-sm">7-Day Sales Overview ($)</h3>
+                  <h3 className="font-bold text-gray-900 dark:text-gray-100 text-sm">7-Day Sales Overview (₹)</h3>
                   
                   {stats.salesOverview.length === 0 ? (
                     <div className="h-60 flex items-center justify-center text-xs text-gray-400">No sales trend data yet</div>
@@ -317,7 +317,7 @@ export default function AdminDashboard() {
                                 <g key={idx} className="group">
                                   <circle cx={c.x} cy={c.y} r="5.5" fill="#10b981" stroke="#ffffff" strokeWidth="2.5" />
                                   <text x={c.x} y={c.y - 12} fill="#10b981" fontSize="9" fontWeight="bold" textAnchor="middle">
-                                    {c.sales > 0 ? `$${c.sales}` : ''}
+                                    {c.sales > 0 ? `₹${c.sales}` : ''}
                                   </text>
                                   <text x={c.x} y="188" fill="#94a3b8" fontSize="8" fontWeight="semibold" textAnchor="middle">
                                     {c.date}
@@ -354,7 +354,7 @@ export default function AdminDashboard() {
                           <div key={idx} className="space-y-1">
                             <div className="flex justify-between text-xs font-semibold text-gray-700 dark:text-gray-300">
                               <span>{p.name}</span>
-                              <span>${p.revenue.toFixed(2)} ({p.quantity} sold)</span>
+                              <span>₹{p.revenue.toFixed(2)} ({p.quantity} sold)</span>
                             </div>
                             <div className="w-full bg-gray-100 dark:bg-gray-700 h-3 rounded-full overflow-hidden">
                               <div 
@@ -397,7 +397,7 @@ export default function AdminDashboard() {
                                 <span className="text-[10px] text-gray-400 block">{ord.customer_email}</span>
                               </td>
                               <td className="py-2.5">{new Date(ord.created_at).toLocaleDateString()}</td>
-                              <td className="py-2.5 font-bold">${ord.total_amount.toFixed(2)}</td>
+                              <td className="py-2.5 font-bold">₹{ord.total_amount.toFixed(2)}</td>
                               <td className="py-2.5">
                                 <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold ${
                                   ord.status === 'Delivered' ? 'bg-green-50 text-green-600 dark:bg-green-950/20' : 'bg-amber-50 text-amber-600 dark:bg-amber-950/20'
@@ -424,7 +424,7 @@ export default function AdminDashboard() {
                         <div key={p.id} className="py-3 flex items-center justify-between">
                           <div>
                             <p className="text-xs font-bold text-gray-800 dark:text-gray-300">{p.name}</p>
-                            <span className="text-[10px] text-gray-400">{p.category} &bull; ${p.price.toFixed(2)}</span>
+                            <span className="text-[10px] text-gray-400">{p.category} &bull; ₹{p.price.toFixed(2)}</span>
                           </div>
                           
                           <div className="flex items-center space-x-1.5">
@@ -491,7 +491,7 @@ export default function AdminDashboard() {
                         </td>
                         
                         <td className="p-4 text-xs font-semibold">{p.category}</td>
-                        <td className="p-4 font-bold">${parseFloat(p.price).toFixed(2)}</td>
+                        <td className="p-4 font-bold">₹{parseFloat(p.price).toFixed(2)}</td>
                         <td className="p-4">
                           <span className={`text-xs font-bold ${p.stock <= 5 ? 'text-red-500 font-bold' : 'text-gray-800 dark:text-gray-200'}`}>
                             {p.stock} units
@@ -593,7 +593,7 @@ export default function AdminDashboard() {
                         <td className="p-4 font-medium">{ord.items?.length || 0} items</td>
 
                         {/* Price amount */}
-                        <td className="p-4 font-bold text-emerald-600 dark:text-emerald-450">${parseFloat(ord.total_amount).toFixed(2)}</td>
+                        <td className="p-4 font-bold text-emerald-600 dark:text-emerald-450">₹{parseFloat(ord.total_amount).toFixed(2)}</td>
 
                         {/* Change state pipeline */}
                         <td className="p-4">
@@ -664,7 +664,7 @@ export default function AdminDashboard() {
 
                 {/* Price */}
                 <div>
-                  <label className="block uppercase tracking-wider mb-1">Price ($) *</label>
+                  <label className="block uppercase tracking-wider mb-1">Price (₹) *</label>
                   <input
                     type="number"
                     step="0.01"

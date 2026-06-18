@@ -80,7 +80,7 @@ export default function OrderHistory() {
             <div className="text-right mt-2 sm:mt-0">
               <span className="text-xs text-gray-400 block">Grand Total</span>
               <span className="text-lg font-black text-emerald-600 dark:text-emerald-400">
-                ${parseFloat(singleOrder.total_amount).toFixed(2)}
+                ₹{parseFloat(singleOrder.total_amount).toFixed(2)}
               </span>
             </div>
           </div>
@@ -167,11 +167,11 @@ export default function OrderHistory() {
                       {item.product?.name || 'Local Grocery Item'}
                     </p>
                     <span className="text-xs text-gray-400 dark:text-gray-500 font-medium">
-                      Qty: {item.quantity} &times; ${parseFloat(item.price_at_purchase).toFixed(2)}
+                      Qty: {item.quantity} &times; ₹{parseFloat(item.price_at_purchase).toFixed(2)}
                     </span>
                   </div>
                   <span className="font-extrabold text-gray-900 dark:text-gray-100">
-                    ${(parseFloat(item.price_at_purchase) * item.quantity).toFixed(2)}
+                    ₹{(parseFloat(item.price_at_purchase) * item.quantity).toFixed(2)}
                   </span>
                 </div>
               ))}
@@ -229,7 +229,7 @@ export default function OrderHistory() {
                 <div className="sm:text-right">
                   <span className="text-xs text-gray-400 block">Total Amount</span>
                   <span className="text-base font-extrabold text-gray-900 dark:text-white">
-                    ${parseFloat(order.total_amount).toFixed(2)}
+                    ₹{parseFloat(order.total_amount).toFixed(2)}
                   </span>
                 </div>
 

@@ -169,7 +169,7 @@ export default function ProductList() {
               <div className="flex items-center space-x-2">
                 <input
                   type="number"
-                  placeholder="Min ($)"
+                  placeholder="Min (₹)"
                   value={minPriceInput}
                   onChange={(e) => setMinPriceInput(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -177,7 +177,7 @@ export default function ProductList() {
                 <span className="text-gray-400 dark:text-gray-600 text-sm">to</span>
                 <input
                   type="number"
-                  placeholder="Max ($)"
+                  placeholder="Max (₹)"
                   value={maxPriceInput}
                   onChange={(e) => setMaxPriceInput(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"

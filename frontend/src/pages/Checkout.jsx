@@ -209,7 +209,7 @@ export default function Checkout() {
                     <span className="text-xs text-gray-400 dark:text-gray-500">Qty: {item.quantity}</span>
                   </div>
                   <span className="font-semibold text-gray-950 dark:text-gray-100 min-w-max">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ₹{(item.price * item.quantity).toFixed(2)}
                   </span>
                 </div>
               ))}
@@ -219,18 +219,18 @@ export default function Checkout() {
             <div className="border-t border-gray-200 dark:border-gray-700 pt-4 space-y-2.5 text-xs text-gray-600 dark:text-gray-400">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span className="font-semibold text-gray-900 dark:text-gray-200">${getCartSubtotal().toFixed(2)}</span>
+                <span className="font-semibold text-gray-900 dark:text-gray-200">₹{getCartSubtotal().toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Taxes (5%)</span>
-                <span className="font-semibold text-gray-900 dark:text-gray-200">${getCartTax().toFixed(2)}</span>
+                <span className="font-semibold text-gray-900 dark:text-gray-200">₹{getCartTax().toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Delivery Charge</span>
                 {getCartDeliveryCharge() === 0 ? (
                   <span className="text-green-500 font-semibold">Free</span>
                 ) : (
-                  <span className="font-semibold text-gray-900 dark:text-gray-200">${getCartDeliveryCharge().toFixed(2)}</span>
+                  <span className="font-semibold text-gray-900 dark:text-gray-200">₹{getCartDeliveryCharge().toFixed(2)}</span>
                 )}
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function Checkout() {
             <div className="border-t border-gray-200 dark:border-gray-700 pt-4 flex justify-between items-end">
               <span className="text-sm font-bold text-gray-800 dark:text-gray-300">Grand Total</span>
               <span className="text-xl font-black text-gray-900 dark:text-gray-50">
-                ${getCartGrandTotal().toFixed(2)}
+                ₹{getCartGrandTotal().toFixed(2)}
               </span>
             </div>
 
